@@ -65,8 +65,8 @@
                 ]);
             }
             addUser($pdo, $Nameuser, $email, $hash, $role);
-
-            echo "Bienvenue $Nameuser";  // Message de bienvenue une fois l'inscription réussi 
+            
+            echo("Bienvenue $Nameuser");  // Message de bienvenue une fois l'inscription réussi 
         }
     }
 ?>

@@ -16,7 +16,7 @@ require_once('../config/config.php');
 
     <div>
         <button><a href="../Users/Inscription.php">S'inscrire</a></button>
-        <button><a href="../Users/Connexion.html">Se connecter</a></button>
+        <button><a href="../Users/Connexion.php">Se connecter</a></button>
     </div>
     
 </body>
