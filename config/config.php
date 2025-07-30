@@ -2,12 +2,12 @@
 
     $host = 'localhost';
     $dbname = 'esports';  
-    $username = 'esports';  
-    $password = 'esports'; 
+    $username = 'competitions';  
+    $password = '1234'; 
 
     try {
         // création de la connexion PDO
-        
+
         $pdo = new PDO(
             "mysql:host=$host;dbname=$dbname;charset=utf8",
             $username, 
