@@ -7,39 +7,49 @@
 </head>
 <body>
     
-    <form action="#" method="POST">
+    <form action="Connexion.php" method="POST">
         <input type="email" name="email" id="email" placeholder="email" required>
+        <br><br>
         <input type="password" name="password" id="password" placeholder="password" required>
+        <br><br>
         <input type="submit" name="submit" id="submit" value="Log In">
     </form>
-
-</body>
-</html>
-
 
 <?php
 
     require_once('../config/config.php');
 
-    //  On recup les éléments du formulaire 
+    // Je vérifie si le formulaire a été soumis
 
-    $email = $_POST['email'];
-    $password = $_POST['password']; 
+    if (!empty($_POST['submit'])) {
 
-    $stmt = $pdo->prepare('SELECT password_hash FROM users WHERE email = :email');
+        // On récup les éléments du formulaire 
 
-    $stmt->execute(['email' => $email]);  // (https://www.php.net/manual/fr/pdo.prepare.php)
-    $user = $stmt->fetch();
+        $email = $_POST['email'];
+        $password = $_POST['password']; 
 
-    if ($user) {
-        if (password_verify($password, $user['password_hash'])) {
-            echo "<br>";
-            echo "Bienvenue $email<br><br>";
+        $stmt = $pdo->prepare('SELECT password_hash FROM users WHERE email = :email');
+        $stmt->execute(['email' => $email]);  // (https://www.php.net/manual/fr/pdo.prepare.php)
+        $user = $stmt->fetch();
+
+        // password_verify() retournera true si le hachage correspond, ou false s'il ne correspond pas.
+
+        if ($user) {
+            if (password_verify($password, $user['password_hash'])) {
+                echo "<br>";
+                echo "Bienvenue $email<br><br>";
+            } else {
+                echo "Mot de passe incorrect";
+            }
         } else {
-            echo "Mot de passe incorrect";
+            echo "Email non trouvé";
         }
-    } else {
-        echo "Email non trouvé";
+
+        echo '<a href="Profil.php">Profil</a><br>';
+
     }
 
-?>
+?> 
+
+</body>
+</html>
