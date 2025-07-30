@@ -15,7 +15,7 @@
 - Users
 → Inscription.php
 Formulaire contenant les champs `username`, `email`, `password` et `role` pour permettre à l'utilisateur de créer un nom d'utilisateur, renseigner son email et son mot de passe, ainsi que la possibilité de choisir son rôle (player, organizer, admin). Player est le rôle par défaut.
-Récupération des éléments de notre formulaire et affichage d’une phrase. 
+Récupération des éléments de notre formulaire. 
 Je test si tous les champs du formulaire sont remplis avant l'insertion de mes éléments dans la base de donnée
 Je hash le mot de passe de l'utilisateur avant de l'insertion pour une total confidentialité 
 Insertion de nos éléments dans la base de donnée → Table `users` (username, email, mot de passe hashé et rôle)
