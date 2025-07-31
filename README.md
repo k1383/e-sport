@@ -24,7 +24,9 @@
 ## config 
 ##### config.php
 - Connexion à la base de donnée 
+- Serveur / Nom de la base de donnée / Nom du compte utilisateur / Mot de passe
 - Création de la connexion PDO
+- Try Catch pour gérer les erreur 
 
 ## public
 ##### index.php

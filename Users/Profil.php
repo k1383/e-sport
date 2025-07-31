@@ -31,7 +31,7 @@
         <input type="submit" name="submit" id="submit" value="Mettre à jour mon profil">
     </form>
     <br><br>
-    <button><a href="../public/index.php">Déconnexion</a></button>
+    <button><a href="../public/index.php"> Se déconneter</a></button>
     <br><br>
     <a href="../Users/Accueil.php">Retour à la page d'accueil</a>
 </body>
