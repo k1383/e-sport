@@ -8,6 +8,10 @@
 <body>
     <a href="../Users/Profil.php">Profil</a>
     <br>
-    <a href=""></a>
+    <br>
+    <a href="../Teams/CreerUneEquipe.php">Créer une équipe</a>
+    <br>
+    <br>
+    <a href="">Rejoindre une équipe </a>
 </body>
 </html>

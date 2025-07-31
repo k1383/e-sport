@@ -31,9 +31,9 @@
         <input type="submit" name="submit" id="submit" value="Mettre à jour mon profil">
     </form>
     <br><br>
-    <button>Déconnexion</button>
+    <button><a href="../public/index.php">Déconnexion</a></button>
     <br><br>
-    <a href="../Users/Accueil.php">Retour a la page d'accueil</a>
+    <a href="../Users/Accueil.php">Retour à la page d'accueil</a>
 </body>
 </html>
 
@@ -76,10 +76,8 @@
 
             echo"<br>";
             echo"<br>";
-            echo("$Nameuser, votre profil a bien été mis à jour");  // Message indiquant la réussite de la mise à jour du profil  
+            echo("$Nameuser, votre profil à bien été mis à jour");  // Message indiquant la réussite de la mise à jour du profil  
         }
     }
-
-    // Faire la déconnection de l'utilisateur
 
 ?>
