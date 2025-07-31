@@ -45,7 +45,7 @@
             ]);
 
             echo "<br>";
-            echo "Création de l'équipe $NameTeams";
+            echo "Création de l'équipe $NameTeams, vous êtes désormais le capitaine";
         }
     }
 

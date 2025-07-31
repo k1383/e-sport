@@ -18,6 +18,7 @@
 | US3 / US4 | Déconnexion / Modifier mon profil |   
 | US5 | Créer une équipe |  
 | US6 | Rejoindre une équipe |  
+| US7 | Gérer les membres de mon équipe |
 
 ### Création des dossier et fichiers suivant 
 
@@ -78,5 +79,7 @@
 - Je fais une boucle foreach pour afficher plusieurs éléments
 - J'ajoute un lien "Rejoindre" pour chaque équipes
 
-(Faire le lien "Rejoindre" pour rejoindre une équipes)
-vérifier que l'utilsiateur ne rejoint pas deux fois la même équipe
+(Faire le lien "Rejoindre")
+$_session['user_id'] 
+lier l'utilisateur à une équipe.
+vérifier que l'utilsiateur ne rejoint pas deux fois la même équipe et afficher un message ne fonction de l'utilisateur, s'il rejoint une équipe "nom d'utilisateur vous avez rejoint nom de l'équipe" / "nom d'utilisateur vous ne pouvez pas rejoindre deux fois cet équipe" / "nom d'utilisateur vous ne pouvez pas rejoindre une autre équipe sans avoir quitte votre équipe actuel"

@@ -1,12 +1,5 @@
 <?php 
-    session_start();  // Chaque utilisateur connecté aure ses propres données de sessions, indépendammment des autres 
-     /*  les sessions 
-        pour utiliser les sessions, vous devez ABSOLUMENT déclarer une fois par page : 
-        session_start()
-
-        cette fonction permet de dire à votre programme que vous allez utiliser les sessions 
-        ATTENTION : le déclaration du début doit se faire AVANT TOUT CODE HTML 
-    */
+    session_start(); 
 ?>
 
 <!DOCTYPE html>

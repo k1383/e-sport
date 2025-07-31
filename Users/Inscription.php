@@ -51,7 +51,7 @@
             $hash = password_hash($password, PASSWORD_DEFAULT);
             // echo "$hash";
 
-            require_once('../config/config.php');
+            require_once('../config/config.php');  // Connexion à la base de données par config.php
 
             // Insertion de mes éléments dans la basse de donnée → table `users`
             

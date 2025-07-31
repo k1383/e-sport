@@ -1,3 +1,16 @@
+<?php 
+    session_start();
+
+    require_once('../config/config.php');
+
+    // Je récup les noms des équipes et la date de création dans la table `teams`
+
+    $stmt = $pdo->prepare('SELECT name as NomEquipe,  created_at as date FROM teams ');
+    $stmt->execute();
+    $equipes = $stmt->fetchAll();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,36 +32,27 @@
                         <th>Rejoindre une équipe</th>
                     </tr>
                 </thead>
+
                 <tbody>
 
-<?php
+                    <?php foreach($equipes as $equipe): ?>
 
-    require_once('../config/config.php');
+                        <tr>
+                            <td><?=$equipe['NomEquipe']?></td> 
+                            <td><?=$equipe['date']?></td>
+                            <td><a href="">Rejoindre</a></td>                  
+                        </tr>
 
-    // Je récup les noms des équipes 
+                    <?php endforeach; ?>  
 
-    $stmt = $pdo->prepare('SELECT name as NomEquipe,  created_at as date FROM teams');
-    $stmt->execute();
-    $equipes = $stmt->fetchAll();
-
-   foreach($equipes as $equipe): 
-
-
-?>
-
-                <tr>
-                    <td><?=$equipe['NomEquipe']?></td> 
-                    <td><?=$equipe['date']?></td>
-                    <td><a href="">Rejoindre</a></td>                    
-                </tr>
-<?php
-    endforeach;
-?>
                 </tbody>
+
             </table> <!-- Fermeture du tab -->
         </div>   
+
         <br>
         <br>
         <a href="../Users/Accueil.php">Retour à la page d'accueil</a>
+
 </body>
 </html>
