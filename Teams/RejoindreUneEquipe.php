@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>Rejoindre une équipe</title>
 </head>
 <body>
         <h1>Rejoindre une équipe</h1>
@@ -16,13 +16,10 @@
                     <tr>
                         <th>Nom de l'équipe</th>
                         <th>Date de création de l'équipe</th>
-                        <th>Rejoindre</th>
+                        <th>Rejoindre une équipe</th>
                     </tr>
                 </thead>
                 <tbody>
-
-                </body>
-</html>
 
 <?php
 
@@ -42,7 +39,7 @@
                 <tr>
                     <td><?=$equipe['NomEquipe']?></td> 
                     <td><?=$equipe['date']?></td>
-                    <td><a href=" ">Rejoindre</a></td>                    
+                    <td><a href="">Rejoindre</a></td>                    
                 </tr>
 <?php
     endforeach;
@@ -50,3 +47,8 @@
                 </tbody>
             </table> <!-- Fermeture du tab -->
         </div>   
+        <br>
+        <br>
+        <a href="../Users/Accueil.php">Retour à la page d'accueil</a>
+</body>
+</html>

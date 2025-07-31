@@ -16,8 +16,8 @@
 | :--------------- |:---------------:| 
 | US2 | Connexion |  
 | US3 / US4 | Déconnexion / Modifier mon profil |   
-| US4 | Créer une équipe |  
-| US5 | Rejoindre une équipe |  
+| US5 | Créer une équipe |  
+| US6 | Rejoindre une équipe |  
 
 ### Création des dossier et fichiers suivant 
 
@@ -52,9 +52,11 @@
 - Si le mot de passe ou l’email est incorrect, alors un message d’erreur apparaît
 
 ##### Accueil.php
-- Regroupement de tous les liens nécessaires une fois que l'inscription ou la connexion est réussie
-- Profil.php
-- CreeUneEquipe.php
+- Regroupement de tous les liens nécessaires une fois que l'inscription ou la connexion est réussie selon le rôle de l'utilisateur 
+- Tous les joueurs, organisateurs, administrateurs peuvent modifier leur profil, créer une équipe et rejoindre une équipe  
+  - Profil.php
+  - CreeUneEquipe.php
+  - RejoindreUneEquipe.php
 
 ##### Profil.php
 - Formulaire contenant les champs `username`, `email` et `password` dont l'utilisateur pourra modifier ce qu'il souhaite 
@@ -76,4 +78,5 @@
 - Je fais une boucle foreach pour afficher plusieurs éléments
 - J'ajoute un lien "Rejoindre" pour chaque équipes
 
-(Faire  le lien "Rejoindre" pour rejoindre une équipes)
+(Faire le lien "Rejoindre" pour rejoindre une équipes)
+vérifier que l'utilsiateur ne rejoint pas deux fois la même équipe
