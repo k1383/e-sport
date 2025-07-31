@@ -72,8 +72,8 @@
 - J'insert mon élément grâce à `INSERT INTO` dans ma base de donnée Table → `teams`
 
 ##### RejoindreUneEquipe.php
-- J'affiche tous les noms d'équipe  et la date de création stoker dans la base de donnée de la table `teams`  dans un tableau avec `SELECT` 
+- J'affiche tous les noms d’équipes et les dates de création stockés dans la base de données, table `teams` sous form de tableau 
 - Je fais une boucle foreach pour afficher plusieurs éléments
-- Ajout de lien pour rejoindre une équipe 
+- J'ajoute un lien "Rejoindre" pour chaque équipes
 
-(problème sur l'affichage , pas le bon ordre  (règler) / faire en sorte a ce que le liens rejoindre fonctionne )
+(Faire  le lien "Rejoindre" pour rejoindre une équipes)

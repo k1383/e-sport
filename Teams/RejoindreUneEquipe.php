@@ -26,9 +26,6 @@
 
 <?php
 
-    // Afficher toutes les équipes de la base de donnée avec SELECT 
-    // Ajouter un lien pour pouvoir rejoindre une équipe 
-
     require_once('../config/config.php');
 
     // Je récup les noms des équipes 
