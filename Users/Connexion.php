@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -28,7 +32,7 @@
         $email = $_POST['email'];
         $password = $_POST['password']; 
 
-        $stmt = $pdo->prepare('SELECT password_hash FROM users WHERE email = :email');
+        $stmt = $pdo->prepare('SELECT id, password_hash FROM users WHERE email = :email');
         $stmt->execute(['email' => $email]);  // (https://www.php.net/manual/fr/pdo.prepare.php)
         $user = $stmt->fetch();
 
@@ -36,15 +40,20 @@
 
         if ($user) {
             if (password_verify($password, $user['password_hash'])) {
+                $_SESSION['user_id'] = $user['id'];  // Je stock l'id de l'utilisateur connecté dans la sessions et je le réutilise dans la page Profil.php pour mettre à jour l'utilisateur
                 echo "<br>";
-                echo "Bienvenue $email<br><br>";
+                header('Location: Accueil.php');
+            exit();
             } else {
+                echo "<br>";
                 echo "Mot de passe incorrect";
             }
         } else {
+            echo "<br>";
             echo "Email non trouvé";
         }
-
+        echo "<br>";
+        echo "<br>";
         echo '<a href="Profil.php">Profil</a><br>';
 
     }

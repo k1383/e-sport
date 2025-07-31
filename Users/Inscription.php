@@ -54,19 +54,17 @@
             require_once('../config/config.php');
 
             // Insertion de mes éléments dans la basse de donnée → table `users`
-
-            function addUser($pdo, $Nameuser, $email, $hash, $role) {
-                $stmt = $pdo->prepare('INSERT INTO users(username, email, password_hash, role) VALUES (:username, :email, :password_hash, :role)');
-                $stmt->execute([
-                    'username' => $Nameuser,
-                    'email' => $email,
-                    'password_hash' => $hash,
-                    'role' => $role
-                ]);
-            }
-            addUser($pdo, $Nameuser, $email, $hash, $role);
             
-            echo("Bienvenue $Nameuser");  // Message de bienvenue une fois l'inscription réussi 
+            $stmt = $pdo->prepare('INSERT INTO users(username, email, password_hash, role) VALUES (:username, :email, :password_hash, :role)');
+            $stmt->execute([
+                'username' => $Nameuser,
+                'email' => $email,
+                'password_hash' => $hash,
+                'role' => $role
+            ]);
+             
+            header('Location: Accueil.php');
+            exit();
         }
     }
 ?>

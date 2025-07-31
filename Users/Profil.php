@@ -1,4 +1,13 @@
+<?php 
+    session_start();  // Chaque utilisateur connecté aure ses propres données de sessions, indépendammment des autres 
+     /*  les sessions 
+        pour utiliser les sessions, vous devez ABSOLUMENT déclarer une fois par page : 
+        session_start()
 
+        cette fonction permet de dire à votre programme que vous allez utiliser les sessions 
+        ATTENTION : le déclaration du début doit se faire AVANT TOUT CODE HTML 
+    */
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,11 +32,13 @@
     </form>
     <br><br>
     <button>Déconnexion</button>
+    <br><br>
+    <a href="../Users/Accueil.php">Retour a la page d'accueil</a>
 </body>
 </html>
 
 <?php
-    
+
     // Je vérifie si le formulaire a été soumis
 
     if (!empty($_POST['submit'])) {
@@ -54,23 +65,21 @@
 
             // Insertion de mes éléments mis à jour par l'utilisateur dans la basse de donnée → table `users`
 
-            function updateUser($pdo, $username, $email, $hash) {
-                $stmt = $pdo->prepare('UPDATE users SET username = :username, email = :email, password_hash = :password WHERE id = :id');
-                $stmt->execute([
-                    'username' => $username,
+            
+                $stmt = $pdo->prepare('UPDATE users SET username = :username, email = :email, password_hash = :password_hash WHERE id = :id');
+                $stmt->execute(array(
+                    'username' => $Nameuser,
                     'email' => $email,
-                    'password' => $hash
-                ]);
-            }
-            updateUser($pdo, $Nameuser, $email, $hash);
+                    'password_hash' => $hash,
+                    'id' =>  $_SESSION['user_id']
+                ));
 
             echo"<br>";
-            echo("$Nameuser, votre profil a bien été mis à jour");  // Message indiquant la réussite de la mise à jour du profil 
+            echo"<br>";
+            echo("$Nameuser, votre profil a bien été mis à jour");  // Message indiquant la réussite de la mise à jour du profil  
         }
     }
 
-    // faire un update 
-    // faire les vérifications "tester si le champs est remplis", hashage du nouveau mot de passe 
-
+    // Faire la déconnection de l'utilisateur
 
 ?>

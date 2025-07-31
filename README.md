@@ -28,13 +28,17 @@
 - Formulaire contenant les champs `email` et `password` afin de se connecter
 - Je vérifie que l'utilisateur a bien renseigner les champs du formulaire avant de continuer
 - Récupération des éléments du formulaire afin de les comparer aux élements de la base de données
--` password_verify()` retournera True si le hachage correspond ou False s'il ne correspond pas
-- Si le mot de passe est True, alors un message de bienvenue apparaît
+- ` password_verify()` retournera True si le hachage correspond ou False s'il ne correspond pas
+- Je stock l'id de l'utilisateur connecté dans la sessions et je le réutilise dans la page Profil.php pour mettre à jour l'utilisateur
+- Si le mot de passe est True, alors on arrive sur la page d'accueil
 - Si le mot de passe ou l’email est incorrect, alors un message d’erreur apparaît
 
-##### Profil
+##### Profil.php
 - Formulaire contenant les champs `username`, `email` et `password` dont l'utilisateur pourra modifier ce qu'il souhaite 
 - Je test si tous les champs du formulaire sont remplis avant l'insertion de mes nouveaux éléments dans la base de donnée
 - Je hash a nouveaux mot de passe de l'utilisateur afin de garantir une nouvelle fois sa confidentialité
 - Insertion de mes nouveaux éléments avec `UPDATE` (mettre à jour) dans la base de donnée → Table `users`
 - Un bouton `Déconnexion` pour se déconnecter (pas encore fait)
+
+##### Accueil.php
+- Regroupement de tous les liens nécessaires une fois que l'inscription ou la connexion est réussie
