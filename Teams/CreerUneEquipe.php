@@ -6,6 +6,7 @@
     <title>Créer une équipe</title>
 </head>
 <body>
+
     <h1>Créer une équipe</h1>
 
     <form action="#" method="POST">
@@ -17,6 +18,7 @@
         <br>
         <a href="../Users/Accueil.php">Retour à la page d'accueil</a>
     </form>
+
 </body>
 </html>
 
