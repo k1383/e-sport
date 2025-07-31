@@ -36,6 +36,7 @@
         } else {
 
             // Insertion de mon éléments avec INSERT INTO dans ma base de donnée
+            
             require_once('../config/config.php');
             
             $stmt = $pdo->prepare('INSERT INTO teams(name) VALUES (:name)');

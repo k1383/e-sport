@@ -12,6 +12,6 @@
     <a href="../Teams/CreerUneEquipe.php">Créer une équipe</a>
     <br>
     <br>
-    <a href="">Rejoindre une équipe </a>
+    <a href="../Teams/RejoindreUneEquipe.php">Rejoindre une équipe </a>
 </body>
 </html>

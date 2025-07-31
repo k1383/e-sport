@@ -26,7 +26,7 @@
 - Connexion à la base de donnée 
 - Serveur / Nom de la base de donnée / Nom du compte utilisateur / Mot de passe
 - Création de la connexion PDO
-- Try Catch pour gérer les erreur 
+- Try Catch pour gérer les erreur de connexion 
 
 ## public
 ##### index.php
@@ -70,3 +70,10 @@
 - Récupération des éléments du formulaire
 - Je teste si le champ du formulaire est rempli avant l'insertion de mon élément dans la base de données
 - J'insert mon élément grâce à `INSERT INTO` dans ma base de donnée Table → `teams`
+
+##### RejoindreUneEquipe.php
+- J'affiche tous les noms d'équipe  et la date de création stoker dans la base de donnée de la table `teams`  dans un tableau avec `SELECT` 
+- Je fais une boucle foreach pour afficher plusieurs éléments
+- Ajout de lien pour rejoindre une équipe 
+
+(problème sur l'affichage , pas le bon ordre  (règler) / faire en sorte a ce que le liens rejoindre fonctionne )
