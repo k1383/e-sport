@@ -10,13 +10,9 @@
     <h1>Créer une équipe</h1>
 
     <form action="#" method="POST">
-        <input type="text" id="text" name="text" placeholder="Name of teams">
-        <br>
-        <br>
-        <input type="submit" name="submit" value="Créer">
-        <br>
-        <br>
-        <a href="../Users/Accueil.php">Retour à la page d'accueil</a>
+        <input type="text" id="text" name="text" placeholder="Name of teams"><br><br>
+        <input type="submit" name="submit" value="Créer Une équipe"><br><br>
+        <a href="../Users/Accueil.php">Retour à la page d'accueil</a><br><br>
     </form>
 
 </body>
@@ -47,8 +43,9 @@
             ]);
 
             echo "<br>";
-            echo "Création de l'équipe $NameTeams, vous êtes désormais le capitaine";
+            echo "Création de l'équipe $NameTeams, vous êtes désormais le capitaine<br><br>"; 
         }
+        
     }
 
 ?>

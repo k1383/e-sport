@@ -3,7 +3,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,8 +23,6 @@
         <br><br>
         <input type="submit" name="submit" id="submit" value="Mettre à jour mon profil">
     </form>
-    <br><br>
-    <button><a href="../public/index.php"> Se déconneter</a></button>
     <br><br>
     <a href="../Users/Accueil.php">Retour à la page d'accueil</a>
 </body>
@@ -59,17 +57,17 @@
             // Insertion de mes éléments mis à jour par l'utilisateur dans la basse de donnée → table `users`
 
             
-                $stmt = $pdo->prepare('UPDATE users SET username = :username, email = :email, password_hash = :password_hash WHERE id = :id');
-                $stmt->execute(array(
-                    'username' => $Nameuser,
-                    'email' => $email,
-                    'password_hash' => $hash,
-                    'id' =>  $_SESSION['user_id']
-                ));
+            $stmt = $pdo->prepare('UPDATE users SET username = :username, email = :email, password_hash = :password_hash WHERE id = :id');
+            $stmt->execute(array(
+                'username' => $Nameuser,
+                'email' => $email,
+                'password_hash' => $hash,
+                'id' =>  $_SESSION['user_id']
+            ));
 
             echo"<br>";
             echo"<br>";
-            echo("$Nameuser, votre profil à bien été mis à jour");  // Message indiquant la réussite de la mise à jour du profil  
+            echo"$Nameuser, votre profil à bien été mis à jour";  // Message indiquant la réussite de la mise à jour du profil  
         }
     }
 

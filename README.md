@@ -15,10 +15,13 @@
 | US1 | Création de compte | 
 | :--------------- |:---------------:| 
 | US2 | Connexion |  
-| US3 / US4 | Déconnexion / Modifier mon profil |   
+| US3 | Déconnexion | 
+| US4 | Modifier mon profil |   
 | US5 | Créer une équipe |  
 | US6 | Rejoindre une équipe |  
 | US7 | Gérer les membres de mon équipe |
+| US8 | Créer un tournoi |
+| US9 | Modifier un tournoi |
 
 ### Création des dossier et fichiers suivant 
 
@@ -56,6 +59,7 @@
 - Regroupement de tous les liens nécessaires une fois que l'inscription ou la connexion est réussie selon le rôle de l'utilisateur 
 - Tous les joueurs, organisateurs, administrateurs peuvent modifier leur profil, créer une équipe et rejoindre une équipe  
   - Profil.php
+  - Déconnexion.php (Formulaire avec un bouton "Se déconnecter")
   - CreeUneEquipe.php
   - RejoindreUneEquipe.php
 
@@ -64,7 +68,13 @@
 - Je test si tous les champs du formulaire sont remplis avant l'insertion de mes nouveaux éléments dans la base de donnée
 - Je hash a nouveaux mot de passe de l'utilisateur afin de garantir une nouvelle fois sa confidentialité
 - Insertion de mes nouveaux éléments avec `UPDATE` (mettre à jour) dans la base de donnée → Table `users`
-- Un bouton `Déconnexion` pour se déconnecter (À faire)
+
+##### Déconnexion.php
+- Un bouton `Déconnexion` pour se déconnecter  
+- Je lance `session_start` pour utiliser les données de session  
+- Je vide toutes les variables de la session avec `unset($_SESSION)`  
+- Je détruis toutes les données de la session courante avec `session_destroy()`  
+- À l'aide du site [Stack Overflow / Déconnecter un utilisateur](https://stackoverflow.com/questions/17949713/how-to-logout-a-user-in-php#:~:text=In%20your%20script%20to%20log,php%20you%20have%20shown%20above.)
 
 ## Teams
 
@@ -72,15 +82,29 @@
 - Formulaire contenant le champs `name` pour permettre à l'utilisateur de renseigner le nom de l'équipe 
 - Récupération des éléments du formulaire
 - Je teste si le champ du formulaire est rempli avant l'insertion de mon élément dans la base de données
-- J'insert mon élément grâce à `INSERT INTO` dans ma base de donnée Table → `teams`
+- J'insert mon élément grâce à `INSERT INTO` dans ma base de donnée → Table `teams`
 
 ##### RejoindreUneEquipe.php
-- J'affiche tous les noms d’équipes et les dates de création stockés dans la base de données, table `teams` sous form de tableau 
-- Je fais une boucle foreach pour afficher plusieurs éléments
-- J'ajoute un lien "Rejoindre" pour chaque équipes
+- J'affiche tous les équipes disponible dans ma base de donnée (noms d’équipes et les dates de création) de la table `teams` sous forme de tableau pour afficher toutes les équipe
+- Je fais une boucle foreach pour afficher toutes les équipes ainsi que leur date de création
+- J'ajoute un lien "Rejoindre" pour que les utilisateur puise rejoindre une équipe → MonEquipe.php (À finir)
 
-Lien "rejoindre" à faire 
-$_session['user_id'] 
-lier l'utilisateur à une équipe.
+##### MonEquipe.php
+- J'affiche l'équipe que l'utilisateur vient de rejoindre, ainsi que la liste de tous ses membres (À faire)
+- Le capitaine a la possibilité d'ajouter ou de supprimer des membres (À faire)
 
-vérifier que l'utilsiateur ne rejoint pas deux fois la même équipe et afficher un message ne fonction de l'utilisateur, s'il rejoint une équipe "nom d'utilisateur vous avez rejoint nom de l'équipe" / "nom d'utilisateur vous ne pouvez pas rejoindre deux fois cet équipe" / "nom d'utilisateur vous ne pouvez pas rejoindre une autre équipe sans avoir quitte votre équipe actuel"
+##### À finir ↓
+## Tournaments
+
+##### CreerUnTournois.php
+- Formaulaire contenant les champs `name`, `game`, `description`, `start_date` et `end_date` afin de créer un tournoi
+- Vérification de mes champs afin de tous prendre en compte 
+- Insertion de mes éléments dans ma base de donnée → Table `tournaments` (À finir)
+
+##### MesTournois.php
+- Affichage des tournois de l'utilisateur avec son id (À finir)
+- Liens "modifier" pour modifier les information du tournois → ModifierTournois.php
+
+##### ModifierTournois.php
+- Formulaire contenant les champs `name`, `game`, `description`, `start_date` et `end_date` afin de mettre à jour n'importe quel information concernant le tournois
+- Insertion de mes nouveaux éléments avec `UPDATE` (mettre à jour) dans la base de donnée → Table `tournaments`

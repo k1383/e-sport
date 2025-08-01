@@ -7,15 +7,15 @@
 </head>
 <body>
 
-    <a href="../Users/Profil.php">Profil</a>
-    <br>
-    <br>
-    <a href="../Teams/CreerUneEquipe.php">Créer une équipe</a>
-    <br>
-    <br>
-    <a href="../Teams/RejoindreUneEquipe.php">Rejoindre une équipe </a>
-    <br>
-    <br>
-    <a href="../Teams/MonEquipe.php">Gérer les membres de mon équipe </a>
+    <a href="../Users/Profil.php">Profil</a><br><br>
+    <a href="../Teams/CreerUneEquipe.php">Créer une équipe</a><br><br>
+    <a href="../Teams/RejoindreUneEquipe.php">Rejoindre une équipe </a><br><br>
+    <a href="../Teams/MonEquipe.php">Mon équipe</a><br><br>
+    <a href="../Tournaments/CreerUnTournois.php">Créer un tournois</a><br><br>
+    <a href="../Tournaments/MesTournois.php">Mes tournois</a><br><br>
+    <form action="../Users/Deconnexion.php" method="POST">
+        <button type="submit">Se déconnecter</button>
+    </form>
+
 </body>
 </html>
